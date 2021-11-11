@@ -1,4 +1,4 @@
-// 树形结构数据化
+// 树形结构数据结构化
 var list = [
     {
         id: 1,
@@ -126,3 +126,13 @@ function treeStructureDate(data) {
 }
 var listArray = treeStructureDate(list);
 console.log(listArray);
+function flattenedTree(data) {
+    var _data = JSON.parse(JSON.stringify(data));
+    return _data.filter(function (item) {
+        var _arr = _data.filter(function (val) { return val.pid == item.id; });
+        _arr.length && (item.children = _arr);
+        return item.pid == 0;
+    });
+}
+var _listArray = flattenedTree(list);
+console.log(_listArray);
