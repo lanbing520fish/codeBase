@@ -3,5 +3,5 @@ let promise = new Promise((resolve, reject) => {
 });
 
 promise.then((res) => {
-  console.log(res)
+  // console.log(res)
 })
